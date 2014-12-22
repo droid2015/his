@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{241E4F22-31A8-4F6A-A25B-47AFC4589B98}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{2594643B-1720-44EA-B0A0-16137CEA6805}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SmartHIS.Infrastructure.Shell</RootNamespace>
-    <AssemblyName>SmartHIS.Shell</AssemblyName>
+    <RootNamespace>SmartHIS.HeThong</RootNamespace>
+    <AssemblyName>SmartHIS.HeThong</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -31,7 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Accessibility" />
     <Reference Include="Microsoft.Practices.CompositeUI, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)\Lib\Microsoft.Practices.CompositeUI.dll</HintPath>
@@ -44,65 +43,38 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)\Lib\Microsoft.Practices.ObjectBuilder.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(SolutionDir)\Lib\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=5.0.414.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(SolutionDir)\Lib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=5.0.414.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(SolutionDir)\Lib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(SolutionDir)\Lib\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
-    <Reference Include="System.Security" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ShellApplication.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="ModuleController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ShellForm.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>ShellForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <Compile Include="ShellForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ShellForm.Designer.cs">
-      <DependentUpon>ShellForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Constants\CommandNames.cs" />
+    <Compile Include="Constants\EventTopicNames.cs" />
+    <Compile Include="Constants\UIExtensionSiteNames.cs" />
+    <Compile Include="Constants\WorkspaceNames.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ProfileCatalog.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Folder Include="Services\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Infrastructure.Interface\Infrastructure.Interface.csproj">
-      <Project>{8088483C-6690-4FFE-B483-B097D7E000A0}</Project>
+    <ProjectReference Include="$(SolutionDir)\Source\Infrastructure\Infrastructure.Interface\Infrastructure.Interface.csproj">
+      <Project>{8088483c-6690-4ffe-b483-b097d7e000a0}</Project>
       <Name>Infrastructure.Interface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Infrastructure.Library\Infrastructure.Library.csproj">
-      <Project>{C5451F1C-2578-4354-91DE-2112EFB0F4EC}</Project>
-      <Name>Infrastructure.Library</Name>
+    <ProjectReference Include="..\HeThong.Interface\HeThong.Interface.csproj">
+      <Project>{92DC10E6-DDE9-4892-9798-B57D5FBAA291}</Project>
+      <Name>HeThong.Interface</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

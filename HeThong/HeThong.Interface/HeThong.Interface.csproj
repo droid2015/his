@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5B565B66-0E72-4A61-A951-40518556F3C4}</ProjectGuid>
+    <ProjectGuid>{92DC10E6-DDE9-4892-9798-B57D5FBAA291}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SmartHIS.Infrastructure.Layout</RootNamespace>
-    <AssemblyName>SmartHIS.Infrastructure.Layout</AssemblyName>
+    <RootNamespace>SmartHIS.HeThong.Interface</RootNamespace>
+    <AssemblyName>SmartHIS.HeThong.Interface</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -48,43 +48,22 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Module.cs" />
+    <Compile Include="Constants\CommandNames.cs" />
+    <Compile Include="Constants\EventTopicNames.cs" />
+    <Compile Include="Constants\UIExtensionSiteNames.cs" />
+    <Compile Include="Constants\WorkspaceNames.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShellLayoutView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ShellLayoutView.Designer.cs">
-      <DependentUpon>ShellLayoutView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ShellLayoutViewPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ShellLayoutView.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>ShellLayoutView.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Infrastructure.Interface\Infrastructure.Interface.csproj">
+    <ProjectReference Include="..\..\Source\Infrastructure\Infrastructure.Interface\Infrastructure.Interface.csproj">
       <Project>{8088483C-6690-4FFE-B483-B097D7E000A0}</Project>
       <Name>Infrastructure.Interface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Infrastructure.Library\Infrastructure.Library.csproj">
-      <Project>{C5451F1C-2578-4354-91DE-2112EFB0F4EC}</Project>
-      <Name>Infrastructure.Library</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
