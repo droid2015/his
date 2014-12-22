@@ -31,6 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Microsoft.Practices.CompositeUI, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(SolutionDir)\Lib\Microsoft.Practices.CompositeUI.dll</HintPath>
@@ -62,10 +69,24 @@
     <Compile Include="Constants\EventTopicNames.cs" />
     <Compile Include="Constants\UIExtensionSiteNames.cs" />
     <Compile Include="Constants\WorkspaceNames.cs" />
+    <Compile Include="Views\DanhSachAcc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\DanhSachAcc.Designer.cs">
+      <DependentUpon>DanhSachAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DanhSachAcc.GeneratedCode.cs">
+      <DependentUpon>DanhSachAcc.cs</DependentUpon>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\DanhSachAccPresenter.cs" />
+    <Compile Include="Views\DanhSachAccPresenter.GeneratedCode.cs">
+      <DependentUpon>DanhSachAccPresenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IDanhSachAcc.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(SolutionDir)\Source\Infrastructure\Infrastructure.Interface\Infrastructure.Interface.csproj">
@@ -76,6 +97,12 @@
       <Project>{92DC10E6-DDE9-4892-9798-B57D5FBAA291}</Project>
       <Name>HeThong.Interface</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Views\DanhSachAcc.resx">
+      <DependentUpon>DanhSachAcc.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
